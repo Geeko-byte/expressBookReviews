@@ -54,7 +54,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
     if (books[isbn]) {
         let book = books[isbn];
         book.reviews[username] = review;
-        return res.status(200).send("Review successfully posted");
+        return res.status(200).json({message: "Login successful!"});
     }
     else {
         return res.status(404).json({message: `ISBN ${isbn} not found`});
